@@ -1,7 +1,7 @@
 [
   {
     "name": "Shure SM7B Cardioid Dynamic Microphone",
-    "price": 349,
+    "price": 3499,
     "description": "The Shure SM7B is a cardioid dynamic microphone that is designed for use in a variety of settings, including live performances, podcasting, and home recording. It features a smooth, flat, wide-range frequency response and a built-in pop filter and shock mount for reduced noise and handling noise.",
     "category": "Electronics",
     "seller": "Shure",
@@ -25,7 +25,7 @@
   },
   {
     "name": "AmazonBasics Desktop Mini Condenser Microphone",
-    "price": 12.99,
+    "price": 1299,
     "description": "The AmazonBasics Desktop Mini Condenser Microphone is a compact and affordable option for recording vocals, instruments, and more. It features a cardioid polar pattern for improved sound isolation and a built-in stand for easy placement. Compatible with most devices with a 3.5mm jack.",
     "category": "Electronics",
     "seller": "AmazonBasics",
@@ -45,7 +45,7 @@
   },
   {
     "name": "KOORUI Business Computer Monitor Display",
-    "price": 139.99,
+    "price": 11200,
     "description": "The KOORUI Business Computer Monitor Display is a 27-inch LED monitor that features a 1080P resolution and a wide viewing angle. It has a sleek and slim design with a thickness of only 7mm and a frameless design. The monitor supports VESA mount and it is compatible with most computer systems.",
     "category": "Laptops",
     "seller": "KOORUI",
@@ -69,7 +69,7 @@
   },
   {
     "name": "Beats Solo3 Wireless On-Ear Headphones",
-    "price": 199.95,
+    "price": 2699,
     "description": "The Beats Solo3 Wireless On-Ear Headphones are a premium set of headphones that feature Bluetooth connectivity, up to 40 hours of battery life, and on-ear controls for adjusting volume and switching tracks. They have a sleek, stylish design and come in a variety of colors. They also have a built-in microphone for taking calls and use the Apple W1 chip for easy and stable connectivity with Apple devices.",
     "category": "Headphones",
     "seller": "Beats by Dr. Dre",
