@@ -5,7 +5,7 @@ const storage = multer.diskStorage({
     cb(null, "public/uploads");
   },
   filename: function (req, file, cb) {
-    cb(null, new Date().toISOString() + "-" + file.originalname);
+    cb(null, new Date().toISOString().replace(/:/g, "-") + file.originalname);
   },
 });
 
@@ -17,7 +17,7 @@ const fileFilter = (req, file, cb) => {
   ) {
     cb(null, true);
   } else
-    ({ error: "Unsupported file format. Upload only JPEG/JPG or PNG" }, false);
+    ({ error: "Unsupported file format. Upload only JPEG/JPG or PNG" }), false;
 };
 
 const upload = multer({

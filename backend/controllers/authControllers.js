@@ -25,7 +25,7 @@ export const updateProfile = async (req, res) => {
   };
 
   if (req.files.length > 0) {
-    const uploader = async (path) => await uploads(path, "shopsavvy/avatars");
+    const uploader = async (path) => await uploads(path, "shopsavy/avatars");
 
     const file = req.files[0];
     const { path } = file;
