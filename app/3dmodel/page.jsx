@@ -1,37 +1,55 @@
 "use client";
+
+import React from "react";
+import StarRatings from "react-star-ratings";
+import BreadCrumbs from "../../components/layouts/BreadCrumbs";
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import React from "react";
-import StarRatings from "react-star-ratings";
-import BreadCrumbs from "../components/layouts/BreadCrumbs";
-
-const breadCrumbs = [
-  { name: "Home", url: "/" },
-  {
-    name: "Toy",
-    url: "/3Dmodel",
-  },
-];
 
 function Model(props) {
-  const { nodes, materials } = useGLTF('/models/scene.gltf')
+  const { nodes, materials } = useGLTF("/models/scene.gltf");
   return (
     <group {...props} dispose={null}>
-      <group position={[9.56, 33.128, -64.363]} rotation={[-3.122, 0.163, 0.01]}>
+      <group
+        position={[9.56, 33.128, -64.363]}
+        rotation={[-3.122, 0.163, 0.01]}
+      >
         <group rotation={[-Math.PI, 0, 0]}>
-          <mesh geometry={nodes.Stereo_textured_mesh_Material0_0.geometry} material={materials.Material0} />
-          <mesh geometry={nodes.Stereo_textured_mesh_Material0_0_1.geometry} material={materials.Material0} />
-          <mesh geometry={nodes.Stereo_textured_mesh_Material0_0_2.geometry} material={materials.Material0} />
-          <mesh geometry={nodes.Stereo_textured_mesh_Material0_0_3.geometry} material={materials.Material0} />
-          <mesh geometry={nodes.Stereo_textured_mesh_Material0_0_4.geometry} material={materials.Material0} />
+          <mesh
+            geometry={nodes.Stereo_textured_mesh_Material0_0.geometry}
+            material={materials.Material0}
+          />
+          <mesh
+            geometry={nodes.Stereo_textured_mesh_Material0_0_1.geometry}
+            material={materials.Material0}
+          />
+          <mesh
+            geometry={nodes.Stereo_textured_mesh_Material0_0_2.geometry}
+            material={materials.Material0}
+          />
+          <mesh
+            geometry={nodes.Stereo_textured_mesh_Material0_0_3.geometry}
+            material={materials.Material0}
+          />
+          <mesh
+            geometry={nodes.Stereo_textured_mesh_Material0_0_4.geometry}
+            material={materials.Material0}
+          />
         </group>
       </group>
     </group>
-  )
+  );
 }
 
-function App() {
+const ProductDetails = () => {
+  const breadCrumbs = [
+    { name: "Home", url: "/" },
+    {
+      name: "toy",
+      url: "/3dmodel",
+    },
+  ];
   return (
     <>
       <BreadCrumbs breadCrumbs={breadCrumbs} />
@@ -39,20 +57,18 @@ function App() {
         <div className="container max-w-screen-xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-5">
             <aside>
-              <div className="border border-gray-200 shadow-sm p-3 text-center rounded mb-5 w-1/4 h-full">
-                <Canvas>
+              <div className="border border-gray-200 shadow-sm p-3 text-center rounded mb-5 h-96">
+                <Canvas className="object-cover inline-block">
                   <Suspense fallback={null}>
                     <ambientLight />
                     <spotLight
                       intensity={0.9}
-                      angle={0.1}
+                      angle={0}
                       penumbra={1}
-                      position={[20, 15, 10]}
+                      position={[10, 15, 10]}
                       castShadow
                     />
-                    <Model
-                      
-                    />
+                    <Model />
                     <OrbitControls
                       enablePan={true}
                       enableZoom={true}
@@ -63,12 +79,14 @@ function App() {
               </div>
             </aside>
             <main>
-              <h2 className="font-semibold text-2xl mb-4">Kids Toy</h2>
+              <h2 className="font-semibold text-2xl mb-4">
+                Green Dinosaur Toy
+              </h2>
 
               <div className="flex flex-wrap items-center space-x-2 mb-2">
                 <div className="ratings">
                   <StarRatings
-                    rating={4}
+                    rating={4.2}
                     starRatedColor="#ffb829"
                     numberOfStars={5}
                     starDimension="20px"
@@ -76,7 +94,7 @@ function App() {
                     name="rating"
                   />
                 </div>
-                <span className="text-yellow-500">4</span>
+                <span className="text-yellow-500">4.2</span>
 
                 <svg
                   width="6px"
@@ -92,7 +110,7 @@ function App() {
 
               <p className="mb-4 font-semibold text-xl">₹499</p>
 
-              <p className="mb-4 text-gray-500">LOREM IPSUM</p>
+              <p className="mb-4 text-gray-500">lorem ipsum</p>
 
               <div className="flex flex-wrap gap-2 mb-5">
                 <button className="px-4 py-2 inline-block text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700">
@@ -110,7 +128,7 @@ function App() {
                 <li className="mb-1">
                   {" "}
                   <b className="font-medium w-36 inline-block">Category:</b>
-                  <span className="text-gray-500">Toy</span>
+                  <span className="text-gray-500">Toys</span>
                 </li>
                 <li className="mb-1">
                   {" "}
@@ -134,6 +152,6 @@ function App() {
       </section>
     </>
   );
-}
+};
 
-export default App;
+export default ProductDetails;
