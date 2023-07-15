@@ -63,7 +63,7 @@ const ProductDetails = () => {
                     <ambientLight />
                     <spotLight
                       intensity={0.9}
-                      angle={0}
+                      angle={Math.PI/3}
                       penumbra={1}
                       position={[10, 15, 10]}
                       castShadow
