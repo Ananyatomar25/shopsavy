@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 
 import { cookies } from "next/headers";
+import UpdateOrder from "@/components/admin/UpdateOrder";
 import UpdateUser from "@/components/admin/UpdateUser";
 
 const getUser = async (id) => {
