@@ -3,12 +3,15 @@ import React from "react";
 import Orders from "@/components/admin/Orders";
 import { cookies } from "next/headers";
 import queryString from "query-string";
+import { getCookieName } from "@/helpers/helpers";
+
 
 
 const getOrders = async (searchParams) => {
   const nextCookies = cookies();
+  const cookieName = getCookieName();
 
-  const nextAuthSessionToken = nextCookies.get("next-auth.session-token");
+  const nextAuthSessionToken = nextCookies.get(cookieName);
 
   const urlParams = {
     page: searchParams.page || 1,
@@ -20,7 +23,7 @@ const getOrders = async (searchParams) => {
     `${process.env.API_URL}/api/admin/orders?${searchQuery}`,
     {
       headers: {
-        Cookie: `next-auth.session-token=${nextAuthSessionToken?.value}`,
+        Cookie: `${nextAuthSessionToken?.name}=${nextAuthSessionToken?.value}`,
       },
     }
   );

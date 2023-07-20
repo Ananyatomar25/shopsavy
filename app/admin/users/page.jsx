@@ -4,11 +4,15 @@ import React from "react";
 import { cookies } from "next/headers";
 import queryString from "query-string";
 import Users from "@/components/admin/Users";
+import { getCookieName } from "@/helpers/helpers";
+
+
 
 const getUsers = async (searchParams) => {
   const nextCookies = cookies();
+  const cookieName = getCookieName();
 
-  const nextAuthSessionToken = nextCookies.get("next-auth.session-token");
+  const nextAuthSessionToken = nextCookies.get(cookieName);
 
   const urlParams = {
     page: searchParams.page || 1,
@@ -20,7 +24,7 @@ const getUsers = async (searchParams) => {
     `${process.env.API_URL}/api/admin/users?${searchQuery}`,
     {
       headers: {
-        Cookie: `next-auth.session-token=${nextAuthSessionToken?.value}`,
+        Cookie: `${nextAuthSessionToken?.name}=${nextAuthSessionToken?.value}`,
       },
     }
   );
